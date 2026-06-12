@@ -10,7 +10,7 @@ public class CartSteps {
 
     public final WebDriver driver;
 
-    private CartSteps(TestContext ctx) {
+    public CartSteps(TestContext ctx) {
         this.driver = ctx.getDriver();
     }
 
