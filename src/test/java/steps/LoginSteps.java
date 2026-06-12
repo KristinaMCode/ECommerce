@@ -1,49 +1,39 @@
 package steps;
 
 import com.opencsv.exceptions.CsvValidationException;
+import config.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BasePage;
 import pages.LoginPage;
 import config.TestConfig;
 import com.opencsv.CSVReaderHeaderAware;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
-
-import java.io.*;
-
 import java.time.Duration;
+import java.util.Map;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import static org.junit.Assert.*;
 
 public class LoginSteps {
 
     private WebDriver driver;
+
+    public LoginSteps(TestContext ctx) {
+        this.driver = ctx.getDriver();
+    }
+
     private final List<String> failedUsers = new ArrayList<>();
 
-    @Before
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
-        driver = new ChromeDriver(options);
-        System.out.println("=== setup: driver created ===");
-    }
 
     @Given("I open the Saucedemo home page")
     public void openHomePage() {
@@ -119,10 +109,9 @@ public class LoginSteps {
                 driver.get(TestConfig.BASE_URL);
                 LoginPage loginPage = new LoginPage(driver);
                 loginPage.login(username, password);
-                // wait for either success or error
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
                 try {
-                    wait.until(d -> loginPage.isInventoryPageDisplayed() || loginPage.isErrorMessageDisplayed());
+                    new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> loginPage.isInventoryPageDisplayed() || loginPage.isErrorMessageDisplayed());
                 } catch (TimeoutException ignored) {
                 }
                 boolean actualSuccess = loginPage.isInventoryPageDisplayed();
@@ -151,10 +140,4 @@ public class LoginSteps {
 
     }
 
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 }

@@ -1,0 +1,43 @@
+package pages;
+
+import config.TestConfig;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+public class InventoryPage extends BasePage {
+
+
+    private By appLogo = By.className("app_logo");
+    private By sauceLabsBackpack = By.xpath("//div[text()='Sauce Labs Backpack']");
+    private By shoppingCartLink = By.className("shopping_cart_link");
+    private By cartItems = By.className("shopping_cart_badge");
+
+    public InventoryPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void addItemToCart(String itemName) {
+        waitForVisible(sauceLabsBackpack).isDisplayed();
+        String itemLocator = itemName.toLowerCase().replace(" ", "-");
+        By addToCartButton = By.cssSelector("button[data-test='add-to-cart-" + itemLocator + "']");
+        waitForClickable(addToCartButton).click();
+    }
+
+    public void cartItemCount(int expectedCount) {
+        String cartItemCount = String.valueOf(expectedCount);
+        waitForVisible(shoppingCartLink).isDisplayed();
+        assertTrue("Expected " + expectedCount + " items in cart, but found " + cartItemCount,
+                waitForVisible(cartItems).getText().equals(cartItemCount));
+
+    }
+
+    public void selectCart() {
+        waitForClickable(shoppingCartLink).click();
+        String actualURL = driver.getCurrentUrl();
+        assertEquals(TestConfig.CART_URL, actualURL);
+    }
+
+}

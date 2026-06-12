@@ -1,10 +1,10 @@
 package pages;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.NoSuchElementException;
 
-public class LoginPage {
-    private WebDriver driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage extends BasePage {
 
     // Locators
     private By usernameField = By.id("user-name");
@@ -13,13 +13,13 @@ public class LoginPage {
     private By errorMessage = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void login(String username, String password) {
-        driver.findElement(usernameField).sendKeys(username);
-        driver.findElement(passwordField).sendKeys(password);
-        driver.findElement(loginButton).click();
+        waitForVisible(usernameField).sendKeys(username);
+        waitForVisible(passwordField).sendKeys(password);
+        waitForClickable(loginButton).click();
     }
 
     public boolean isInventoryPageDisplayed() {
@@ -28,7 +28,7 @@ public class LoginPage {
 
     public boolean isErrorMessageDisplayed() {
         try {
-            return driver.findElement(errorMessage).isDisplayed();
+            return waitForVisible(errorMessage).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
@@ -36,7 +36,7 @@ public class LoginPage {
 
     public String getErrorMessage() {
         try {
-            return driver.findElement(errorMessage).getText();
+            return waitForVisible(errorMessage).getText();
         } catch (NoSuchElementException e) {
             return "";
         }
