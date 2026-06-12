@@ -5,22 +5,21 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
 
-public class CartPage {
-    private WebDriver driver;
+public class CartPage  extends BasePage {
 
-    public By cartTitle = By.name("Your Cart");
-    public By inventoryItemName = By.className("inventory_item_name");
+    private By cartTitle = By.xpath("//span[text()='Your Cart']");
+    private By inventoryItemName = By.className("inventory_item_name");
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
+       super(driver);
     }
 
     public void verifyCartPage() {
-        driver.findElement(cartTitle).isDisplayed();
+        waitForVisible(cartTitle).isDisplayed();
     }
 
     public void verifyItemInCart(String itemName) {
-        String actualItem = driver.findElement(inventoryItemName).getText();
+        String actualItem = waitForVisible(inventoryItemName).getText();
         assertEquals(itemName, actualItem);
     }
 }

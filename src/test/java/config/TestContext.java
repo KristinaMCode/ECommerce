@@ -6,7 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestContext {
-    public WebDriver driver;
+    private WebDriver driver;
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+
 
     public TestContext() {
         WebDriverManager.chromedriver().setup();
