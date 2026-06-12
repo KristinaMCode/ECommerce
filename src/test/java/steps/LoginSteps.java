@@ -54,8 +54,8 @@ public class LoginSteps {
         System.out.println("=== verifyPageTitle: Page title verified ===");
     }
 
-    @When("I login user")
-    public void loginUser() {
+    @When("User logs in")
+    public void userLogsIn() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(TestConfig.STANDARD_USER, TestConfig.STANDARD_PASSWORD);
         System.out.println("=== loginUser: login logic executed ===");
