@@ -29,13 +29,8 @@ public class CartPage  extends BasePage {
         waitForVisible(removeButton).click();
     }
 
-    public boolean isCartEmpty() {
+    public void isCartEmpty() {
         assertTrue("Cart badge should not be visible", isElementAbsent(cartItems));
-        try {
-            waitForVisible(inventoryItemName);
-            return false; // If item is found, cart is not empty
-        } catch (Exception e) {
-            return true; // If item is not found, cart is empty
-        }
+        assertTrue("Cart item should not be visible", isElementAbsent(inventoryItemName));
     }
 }

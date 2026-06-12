@@ -10,11 +10,10 @@ import pages.InventoryPage;
 
 public class InventorySteps {
 
-    public final WebDriver driver;
+    private final WebDriver driver;
     public InventorySteps(TestContext ctx) {
         this.driver = ctx.getDriver();
     }
-
 
     @When("User adds the {string} to the shopping cart")
     public void userAddsItemToCart(String itemName) {

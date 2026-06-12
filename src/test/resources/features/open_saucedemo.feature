@@ -11,7 +11,7 @@ Feature: Open Sauce Demo
   Scenario: Login to Sauce Demo
     Given I open the Saucedemo home page
     Then The URL should be "https://www.saucedemo.com/"
-    When I login user
+    When User logs in
     Then User is logged in successfully
 
   Scenario: Login with invalid credentials from CSV
