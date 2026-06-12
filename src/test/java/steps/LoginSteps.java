@@ -133,6 +133,8 @@ public class LoginSteps {
         if (!failedUsers.isEmpty()) {
             fail("These rows failed: " + String.join(", ", failedUsers));
         }
+        System.out.println("=== verifyExpectedOutcome: Login status as expected ===");
+
     }
 
     @Then("All users should be logged in successfully")

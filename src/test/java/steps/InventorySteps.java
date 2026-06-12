@@ -20,12 +20,14 @@ public class InventorySteps {
     public void userAddsItemToCart(String itemName) {
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.addItemToCart(itemName);
+        System.out.println("=== userAddsItemToCart: Item added to cart ===");
     }
 
     @Then("The shopping cart should contain {int} item(s)")
     public void verifyCartItemCount(int expectedCount) {
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.cartItemCount(expectedCount);
+        System.out.println("=== verifyCartItemCount: Cart item count verified it is " + expectedCount + " ===");
     }
 
     @And("The shopping cart should contain {string} item")
@@ -34,5 +36,6 @@ public class InventorySteps {
         inventoryPage.selectCart();
         CartPage cartPage = new CartPage(driver);
         cartPage.verifyItemInCart(itemName);
+        System.out.println("=== verifyCartContainsItem: Item "+itemName+"verified in cart ===");
     }
 }
