@@ -10,3 +10,13 @@ Feature: Shopping cart
     When User adds the "Sauce Labs Backpack" to the shopping cart
     Then The shopping cart should contain 1 item
     And The shopping cart should contain "Sauce Labs Backpack" item
+
+  Scenario: Add a product to the shopping cart, remove it and verify
+    Given I open the Saucedemo home page
+    Then I login user
+    Then User is logged in successfully
+    When User adds the "Sauce Labs Backpack" to the shopping cart
+    Then The shopping cart should contain 1 item
+    And The shopping cart should contain "Sauce Labs Backpack" item
+    Then Remove the "Sauce Labs Backpack" from the shopping cart
+    Then The shopping cart should be empty

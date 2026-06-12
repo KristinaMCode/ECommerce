@@ -29,4 +29,7 @@ public class BasePage {
         wait.until(ExpectedConditions.urlContains(urlFragment));
     }
 
+    protected boolean isElementAbsent(By locator) {
+        return driver.findElements(locator).isEmpty();
+    }
 }
