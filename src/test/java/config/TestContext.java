@@ -22,6 +22,7 @@ public class TestContext {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
+        options.addArguments("--headless");
         //Disable password manager to prevent pop-ups during tests
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
