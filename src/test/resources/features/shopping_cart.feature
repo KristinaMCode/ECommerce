@@ -8,7 +8,6 @@ Feature: Shopping cart
     Then User logs in
     Then User is logged in successfully
 
-
   Scenario: Add a product to the shopping cart and verify
     When User adds the "Sauce Labs Backpack" to the shopping cart
     Then The shopping cart should contain 1 item
