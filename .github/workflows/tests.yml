@@ -4,7 +4,7 @@ on:
       branches: [ main, feature/* ]
     pull_request:
       branches: [ main ]
-Just jobs:
+jobs:
     test:
       runs-on: ubuntu-latest
 
