@@ -3,17 +3,20 @@ Feature: Open Sauce Demo
   I want to open the Sauce Demo website
   So that I can access the products and make purchases
 
+  @smoke
   Scenario: Open  page and verify URL and title
     Given I open the Saucedemo home page
     Then The URL should be "https://www.saucedemo.com/"
     And The page title should contain "Swag Labs"
 
+  @smoke
   Scenario: Login to Sauce Demo
     Given I open the Saucedemo home page
     Then The URL should be "https://www.saucedemo.com/"
     When User logs in
     Then User is logged in successfully
 
+  @regression
   Scenario: Login with invalid credentials from CSV
     Given I open the Saucedemo home page
     Then The URL should be "https://www.saucedemo.com/"

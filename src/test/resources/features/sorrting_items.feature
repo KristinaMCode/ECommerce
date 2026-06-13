@@ -3,6 +3,7 @@ Feature: Sorting Items
   I want to sort items on the Sauce Demo website
   So that I can find products based on my preferences
 
+  @regression
   Scenario: Sort products by name Z to A
     Given I open the Saucedemo home page
     Then User logs in
