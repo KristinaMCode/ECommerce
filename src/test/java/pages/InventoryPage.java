@@ -14,6 +14,8 @@ public class InventoryPage extends BasePage {
     private By sauceLabsBackpack = By.xpath("//div[text()='Sauce Labs Backpack']");
     private By shoppingCartLink = By.className("shopping_cart_link");
     private By cartItems = By.className("shopping_cart_badge");
+    private By sortDropdown = By.className("product_sort_container");
+
 
     public InventoryPage(WebDriver driver) {
         super(driver);
@@ -40,4 +42,16 @@ public class InventoryPage extends BasePage {
         assertEquals(TestConfig.CART_URL, actualURL);
     }
 
+    public void sortProducts(String sortOption) {
+        waitForClickable(sortDropdown).click();
+        By option = By.xpath("//option[text()='" + sortOption + "']");
+        waitForClickable(option).click();
+    }
+
+    public void verifyFirstProduct(String expectedProduct) {
+        By firstProduct = By.xpath("(//div[@class='inventory_item_name '])[1]");
+        String actualFirstProduct = waitForVisible(firstProduct).getText();
+        assertEquals("Expected first product to be " + expectedProduct + " but found " + actualFirstProduct,
+                expectedProduct, actualFirstProduct);
+    }
 }
