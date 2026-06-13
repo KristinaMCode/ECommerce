@@ -4,6 +4,9 @@ on:
       branches: [ main, feature/* ]
     pull_request:
       branches: [ main ]
+    schedule:
+        - cron: '0 2 * * *'  # every night at 2am
+
 jobs:
     test:
       runs-on: ubuntu-latest
@@ -23,3 +26,13 @@ jobs:
 
         - name: Run tests
           run: mvn test -B
+
+        - name: Run smoke tests
+          if: github.event_name != 'schedule'
+          run: mvn test -Dcucumber.filter.tags="@smoke"
+
+        - name: Run regression tests
+          if: github.event_name == 'schedule'
+          run: mvn test -Dcucumber.filter.tags="@regression"
+
+
