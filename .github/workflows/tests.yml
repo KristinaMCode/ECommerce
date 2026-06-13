@@ -24,9 +24,6 @@ jobs:
         - name: Install Chrome
           uses: browser-actions/setup-chrome@v1
 
-        - name: Run tests
-          run: mvn test -B
-
         - name: Run smoke tests
           if: github.event_name != 'schedule'
           run: mvn test -Dcucumber.filter.tags="@smoke"
@@ -37,7 +34,7 @@ jobs:
 
         - name: Generate Allure Report
           if: always()
-          run: mvn allure:report
+          run: mvn allure:report -B
 
         - name: Publish Allure Report
           if: always()
