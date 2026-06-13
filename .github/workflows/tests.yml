@@ -35,4 +35,17 @@ jobs:
           if: github.event_name == 'schedule'
           run: mvn test -Dcucumber.filter.tags="@regression"
 
+        - name: Generate Allure Report
+          if: always()
+          run: mvn allure:report
+
+        - name: Publish Allure Report
+          if: always()
+          uses: actions/upload-artifact@v4
+          with:
+           name: allure-report
+           path: target/allure-report
+
+
+
 
