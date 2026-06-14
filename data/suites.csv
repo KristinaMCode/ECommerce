@@ -1,7 +1,10 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Jun 14 16:08:46 UTC 2026","Sun Jun 14 16:08:48 UTC 2026","1597","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
+"passed","Sun Jun 14 16:21:38 UTC 2026","Sun Jun 14 16:21:39 UTC 2026","1132","","Shopping cart","","Add a product to the shopping cart and verifywhats next","","Add a product to the shopping cart and verifywhats next","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Sun Jun 14 16:21:37 UTC 2026","Sun Jun 14 16:21:38 UTC 2026","1248","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Sun Jun 14 16:08:34 UTC 2026","Sun Jun 14 16:08:46 UTC 2026","12410","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
+"passed","Sun Jun 14 16:21:27 UTC 2026","Sun Jun 14 16:21:36 UTC 2026","9013","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"

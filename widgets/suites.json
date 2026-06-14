@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"a132e02739b109a0a43ca9ec71527eb7","name":"Open Sauce Demo","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
+{"total":2,"items":[{"uid":"a132e02739b109a0a43ca9ec71527eb7","name":"Open Sauce Demo","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"77cc29c2671cb6631964f761db1fc9b3","name":"Shopping cart","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
