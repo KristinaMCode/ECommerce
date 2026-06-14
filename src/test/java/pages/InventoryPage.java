@@ -38,6 +38,7 @@ public class InventoryPage extends BasePage {
 
     public void selectCart() {
         waitForClickable(shoppingCartLink).click();
+        waitForUrlToContain("cart.html");
         String actualURL = driver.getCurrentUrl();
         assertEquals(TestConfig.CART_URL, actualURL);
     }

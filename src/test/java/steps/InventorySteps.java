@@ -35,7 +35,7 @@ public class InventorySteps {
         inventoryPage.selectCart();
         CartPage cartPage = new CartPage(driver);
         cartPage.verifyItemInCart(itemName);
-        System.out.println("=== verifyCartContainsItem: Item "+itemName+"verified in cart ===");
+        System.out.println("=== verifyCartContainsItem: Item "+itemName+" verified in cart ===");
     }
 
     @When ("User sorts products by {string}")
