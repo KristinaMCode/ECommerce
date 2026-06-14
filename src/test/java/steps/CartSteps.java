@@ -26,6 +26,12 @@ public class CartSteps {
     public void verifyCartIsEmpty() {
         CartPage cartPage = new CartPage(driver);
         cartPage.isCartEmpty();
+    }
 
+    @When("User proceeds to checkout")
+    public void proceedToCheckout() {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickCheckoutButton();
+        System.out.println("=== proceedToCheckout: User proceeded to checkout ===");
     }
 }
