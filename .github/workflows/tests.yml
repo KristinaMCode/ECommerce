@@ -5,7 +5,10 @@ on:
     pull_request:
       branches: [ main ]
     schedule:
-        - cron: '0 2 * * *'  # every night at 2am
+      - cron: '0 2 * * *'
+
+permissions:
+    contents: write
 
 jobs:
     test:
@@ -13,36 +16,42 @@ jobs:
 
       steps:
         - name: Checkout code
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
 
         - name: Set up Java 17
-          uses: actions/setup-java@v3
+          uses: actions/setup-java@v4
           with:
             java-version: '17'
             distribution: 'temurin'
 
         - name: Install Chrome
-          uses: browser-actions/setup-chrome@v1
+          uses: browser-actions/setup-chrome@latest
 
         - name: Run smoke tests
           if: github.event_name != 'schedule'
-          run: mvn test -Dcucumber.filter.tags="@smoke"
+          run: mvn test -B -Dcucumber.filter.tags="@smoke"
 
         - name: Run regression tests
           if: github.event_name == 'schedule'
-          run: mvn test -Dcucumber.filter.tags="@regression"
+          run: mvn test -B -Dcucumber.filter.tags="@regression"
 
         - name: Generate Allure Report
           if: always()
           run: mvn allure:report -B
 
-        - name: Publish Allure Report
+        - name: Publish Allure Report as Artifact
           if: always()
           uses: actions/upload-artifact@v4
           with:
-           name: allure-report
-           path: target/allure-report
+            name: allure-report
+            path: target/site/allure-maven-plugin
 
+        - name: Deploy to GitHub Pages
+          if: always() && github.ref == 'refs/heads/main'
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: target/site/allure-maven-plugin
 
 
 
