@@ -1,7 +1,7 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Jun 14 15:35:26 UTC 2026","Sun Jun 14 15:35:36 UTC 2026","10333","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
+"passed","Sun Jun 14 16:01:40 UTC 2026","Sun Jun 14 16:01:43 UTC 2026","3508","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Sun Jun 14 15:35:36 UTC 2026","Sun Jun 14 15:35:38 UTC 2026","1431","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
+"passed","Sun Jun 14 16:01:44 UTC 2026","Sun Jun 14 16:01:45 UTC 2026","1255","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
