@@ -8,7 +8,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.BasePage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.LoginPage;
 import config.TestConfig;
 import com.opencsv.CSVReaderHeaderAware;
@@ -26,10 +27,15 @@ import static org.junit.Assert.*;
 
 public class LoginSteps {
 
-    private WebDriver driver;
+    private static final Logger log = LoggerFactory.getLogger(LoginSteps.class);
+
+
+    private final WebDriver driver;
+    private final LoginPage loginPage;
 
     public LoginSteps(TestContext ctx) {
         this.driver = ctx.getDriver();
+        this.loginPage = new LoginPage(driver);
     }
 
     private final List<String> failedUsers = new ArrayList<>();
@@ -38,55 +44,50 @@ public class LoginSteps {
     @Given("I open the Saucedemo home page")
     public void openHomePage() {
         driver.get(TestConfig.BASE_URL);
-        System.out.println("=== openHomePage: navigated to saucedemo ===");
+        log.info("openHomePage: navigated to saucedemo ");
     }
 
     @Then("The URL should be {string}")
     public void verifyURL(String expectedURL) {
         String actualURL = driver.getCurrentUrl();
         assertEquals(expectedURL, actualURL);
-        System.out.println("=== verifyURL: URL is correct ===");
+        log.info("verifyURL: URL is correct ");
     }
 
     @Then("The page title should contain {string}")
     public void verifyPageTitle(String expectedTitle) {
         assertTrue(driver.getTitle().contains(expectedTitle));
-        System.out.println("=== verifyPageTitle: Page title verified ===");
+        log.info("verifyPageTitle: Page title verified ");
     }
 
     @When("User logs in")
     public void userLogsIn() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.login(TestConfig.STANDARD_USER, TestConfig.STANDARD_PASSWORD);
-        System.out.println("=== loginUser: login logic executed ===");
+        log.info("loginUser: login logic executed ");
     }
 
     @When("I login with username {string} and password {string}")
     public void loginWithCredentials(String username, String password) {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
-        System.out.println("=== loginWithCredentials: Attempted login with username='" + username + "' and password='" + password + "' ===");
+        log.info("loginWithCredentials: Attempted login with username='" + username + "' and password='" + password + "' ");
     }
 
     @Then("User is logged in successfully")
     public void verifyLoginSuccess() {
-        LoginPage loginPage = new LoginPage(driver);
         assertTrue("Expected to be on inventory page", loginPage.isInventoryPageDisplayed());
-        System.out.println("=== verifyLoginSuccess: Login successful ===");
+        log.info("verifyLoginSuccess: Login successful ");
     }
 
     @Then("User is not logged in unsuccessfully")
     public void verifyLoginFailure() {
-        LoginPage loginPage = new LoginPage(driver);
         assertFalse("Expected to remain on login page", loginPage.isInventoryPageDisplayed());
-        System.out.println("=== verifyLoginFailure: Login failed as expected ===");
+        log.info("verifyLoginFailure: Login failed as expected ");
     }
 
     @Then("Error message should be displayed")
     public void verifyErrorMessageDisplayed() {
-        LoginPage loginPage = new LoginPage(driver);
         assertTrue("Expected error message to be displayed", loginPage.isErrorMessageDisplayed());
-        System.out.println("=== verifyErrorMessageDisplayed: Error message is visible: " + loginPage.getErrorMessage() + " ===");
+        log.info("verifyErrorMessageDisplayed: Error message is visible: " + loginPage.getErrorMessage());
     }
 
     @When("I login with CSV file {string}")
@@ -107,9 +108,7 @@ public class LoginSteps {
                 // fresh start
                 driver.manage().deleteAllCookies();
                 driver.get(TestConfig.BASE_URL);
-                LoginPage loginPage = new LoginPage(driver);
                 loginPage.login(username, password);
-
                 try {
                     new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> loginPage.isInventoryPageDisplayed() || loginPage.isErrorMessageDisplayed());
                 } catch (TimeoutException ignored) {
@@ -133,13 +132,7 @@ public class LoginSteps {
         if (!failedUsers.isEmpty()) {
             fail("These rows failed: " + String.join(", ", failedUsers));
         }
-        System.out.println("=== verifyExpectedOutcome: Login status as expected ===");
+        log.info("verifyExpectedOutcome: Login status as expected ");
 
     }
-
-    @Then("All users should be logged in successfully")
-    public void allUsersShouldBeLoggedInSuccessfully() {
-
-    }
-
 }

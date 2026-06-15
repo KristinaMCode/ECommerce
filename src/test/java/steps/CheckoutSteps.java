@@ -5,6 +5,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.CheckoutCompletePage;
 import pages.CheckoutOverviewPage;
 import pages.CheckoutPage;
@@ -12,51 +14,55 @@ import pages.InventoryPage;
 
 public class CheckoutSteps {
 
+    private static final Logger log = LoggerFactory.getLogger(CheckoutSteps.class);
+
+
     private final WebDriver driver;
+    private final CheckoutPage checkoutPage;
+    private final CheckoutOverviewPage checkoutOverviewPage;
+    private final CheckoutCompletePage checkoutCompletePage;
+
     public CheckoutSteps(TestContext ctx) {
         this.driver = ctx.getDriver();
-
+        this.checkoutPage = new CheckoutPage(driver);
+        this.checkoutOverviewPage = new CheckoutOverviewPage(driver);
+        this.checkoutCompletePage = new CheckoutCompletePage(driver);
     }
+
 
     @Then("The checkout page should be displayed")
     public void theCheckoutPageShouldBeDisplayed() {
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.verifyCheckoutPage();
-        System.out.println("=== theCheckoutPageShouldBeDisplayed: Checkout page is displayed ===");
+        log.info("theCheckoutPageShouldBeDisplayed: Checkout page is displayed ");
     }
 
-   @When("User enters checkout information with first name {string}, last name {string}, and postal code {string}")
+    @When("User enters checkout information with first name {string}, last name {string}, and postal code {string}")
     public void userEntersCheckoutInformation(String firstName, String lastName, String postalCode) {
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.enterCheckoutInformation(firstName, lastName, postalCode);
-   System.out.println("=== userEntersCheckoutInformation: Entered checkout information ===");
+        log.info("userEntersCheckoutInformation: Entered checkout information ");
     }
 
-     @Then("The checkout overview page should be displayed")
+    @Then("The checkout overview page should be displayed")
     public void theCheckoutOverviewPageShouldBeDisplayed() {
-         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver);
-         checkoutOverviewPage.verifyCheckoutOverviewPage();
-         System.out.println("=== theCheckoutOverviewPageShouldBeDisplayed: Checkout overview page is displayed ===");
-     }
+        checkoutOverviewPage.verifyCheckoutOverviewPage();
+        log.info("theCheckoutOverviewPageShouldBeDisplayed: Checkout overview page is displayed ");
+    }
 
-    @And ("The checkout overview page should contain {string} item")
+    @And("The checkout overview page should contain {string} item")
     public void theCheckoutOverviewPageShouldContainItem(String itemName) {
-        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver);
         checkoutOverviewPage.verifyFirstProduct(itemName);
-        System.out.println("=== theCheckoutOverviewPageShouldContainItem: Verified item in checkout overview ===");
+        log.info("theCheckoutOverviewPageShouldContainItem: Verified item in checkout overview ");
     }
 
     @When("User completes the checkout process")
     public void userCompletesTheCheckoutProcess() {
-        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver);
         checkoutOverviewPage.completeCheckout();
-        System.out.println("=== userCompletesTheCheckoutProcess: Completed checkout process ===");
+        log.info("userCompletesTheCheckoutProcess: Completed checkout process ");
     }
 
     @Then("The checkout complete page should be displayed")
     public void theCheckoutCompletePageShouldBeDisplayed() {
-        CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
         checkoutCompletePage.verifyCheckoutCompletePage();
-        System.out.println("=== theCheckoutCompletePageShouldBeDisplayed: Checkout complete page is displayed ===");
+        log.info("theCheckoutCompletePageShouldBeDisplayed: Checkout complete page is displayed ");
     }
 }

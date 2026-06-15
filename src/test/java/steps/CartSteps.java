@@ -4,34 +4,37 @@ import config.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.CartPage;
 
 public class CartSteps {
 
-    public final WebDriver driver;
+    private static final Logger log = LoggerFactory.getLogger(CartSteps.class);
+
+    private final WebDriver driver;
+    private final CartPage cartPage;
 
     public CartSteps(TestContext ctx) {
         this.driver = ctx.getDriver();
+        this.cartPage = new CartPage(driver);
     }
 
     @When("User removes {string} from the shopping cart")
     public void removeItemFromCart(String itemName) {
-        CartPage cartPage = new CartPage(driver);
         cartPage.clickRemoveButton();
-        System.out.println("=== removeItemFromCart: Item " + itemName + " removed from cart ===");
+        log.info("removeItemFromCart: Item " + itemName + " removed from cart ");
     }
 
 
     @Then("The shopping cart should be empty")
     public void verifyCartIsEmpty() {
-        CartPage cartPage = new CartPage(driver);
         cartPage.isCartEmpty();
     }
 
     @When("User proceeds to checkout")
     public void proceedToCheckout() {
-        CartPage cartPage = new CartPage(driver);
         cartPage.clickCheckoutButton();
-        System.out.println("=== proceedToCheckout: User proceeded to checkout ===");
+        log.info("proceedToCheckout: User proceeded to checkout ");
     }
 }

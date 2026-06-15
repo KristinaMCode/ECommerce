@@ -19,7 +19,7 @@ public class CartPage extends BasePage {
     }
 
     public void verifyCartPage() {
-        waitForVisible(cartTitle).isDisplayed();
+        assertTrue("Cart page title should be visible", waitForVisible(cartTitle).isDisplayed());
     }
 
     public void verifyItemInCart(String itemName) {
