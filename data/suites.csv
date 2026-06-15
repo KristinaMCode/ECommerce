@@ -1,16 +1,10 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Jun 15 07:10:21 UTC 2026","Mon Jun 15 07:10:22 UTC 2026","1017","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
-"passed","Mon Jun 15 07:10:20 UTC 2026","Mon Jun 15 07:10:21 UTC 2026","1022","","Shopping cart","","Add multiple products to the shopping cart and verify count","","Add multiple products to the shopping cart and verify count","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Mon Jun 15 07:10:04 UTC 2026","Mon Jun 15 07:10:12 UTC 2026","7280","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
-  I want to add products to the shopping cart, remove them and verify the cart contents
-  So that I can manage my shopping cart effectively"
-"passed","Mon Jun 15 07:10:18 UTC 2026","Mon Jun 15 07:10:20 UTC 2026","1299","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Mon Jun 15 07:10:12 UTC 2026","Mon Jun 15 07:10:18 UTC 2026","6555","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+"passed","Mon Jun 15 19:21:37 UTC 2026","Mon Jun 15 19:21:39 UTC 2026","1583","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
+"passed","Mon Jun 15 19:21:21 UTC 2026","Mon Jun 15 19:21:37 UTC 2026","15527","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
+  I want to open the Sauce Demo website
+  So that I can access the products and make purchases"
+"passed","Mon Jun 15 19:21:39 UTC 2026","Mon Jun 15 19:21:40 UTC 2026","1123","","Shopping cart","","Add a product to the shopping cart and verify cart contents","","Add a product to the shopping cart and verify cart contents","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
