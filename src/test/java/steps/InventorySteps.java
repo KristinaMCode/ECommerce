@@ -5,48 +5,52 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.CartPage;
 import pages.InventoryPage;
 
 public class InventorySteps {
 
     private final WebDriver driver;
+
+    private static final Logger log = LoggerFactory.getLogger(InventorySteps.class);
+
+    private final InventoryPage inventoryPage;
+    private final CartPage cartPage;
+
     public InventorySteps(TestContext ctx) {
         this.driver = ctx.getDriver();
+        this.inventoryPage = new InventoryPage(driver);
+        this.cartPage = new CartPage(driver);
     }
 
     @When("User adds the {string} to the shopping cart")
     public void userAddsItemToCart(String itemName) {
-        InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.addItemToCart(itemName);
-        System.out.println("=== userAddsItemToCart: Item added to cart ===");
+        log.info("userAddsItemToCart: Item added to cart ");
     }
 
     @Then("The shopping cart should contain {int} item(s)")
     public void verifyCartItemCount(int expectedCount) {
-        InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.cartItemCount(expectedCount);
-        System.out.println("=== verifyCartItemCount: Cart item count verified it is " + expectedCount + " ===");
+        log.info("verifyCartItemCount: Cart item count verified it is " + expectedCount);
     }
 
     @And("The shopping cart should contain {string} item")
     public void verifyCartContainsItem(String itemName) {
-        InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.selectCart();
-        CartPage cartPage = new CartPage(driver);
         cartPage.verifyItemInCart(itemName);
-        System.out.println("=== verifyCartContainsItem: Item "+itemName+" verified in cart ===");
+        log.info("verifyCartContainsItem: Item " + itemName + " verified in cart ");
     }
 
-    @When ("User sorts products by {string}")
+    @When("User sorts products by {string}")
     public void sortProducts(String sortOption) {
-        InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.sortProducts(sortOption);
     }
 
-    @Then ("First product should be {string}")
+    @Then("First product should be {string}")
     public void verifyFirstProduct(String expectedProduct) {
-        InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.verifyFirstProduct(expectedProduct);
     }
 }

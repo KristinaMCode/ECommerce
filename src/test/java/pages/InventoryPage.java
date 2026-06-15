@@ -22,7 +22,6 @@ public class InventoryPage extends BasePage {
     }
 
     public void addItemToCart(String itemName) {
-        waitForVisible(sauceLabsBackpack).isDisplayed();
         String itemLocator = itemName.toLowerCase().replace(" ", "-");
         By addToCartButton = By.cssSelector("button[data-test='add-to-cart-" + itemLocator + "']");
         waitForClickable(addToCartButton).click();
@@ -30,10 +29,8 @@ public class InventoryPage extends BasePage {
 
     public void cartItemCount(int expectedCount) {
         String cartItemCount = String.valueOf(expectedCount);
-        waitForVisible(shoppingCartLink).isDisplayed();
         assertTrue("Expected " + expectedCount + " items in cart, but found " + cartItemCount,
                 waitForVisible(cartItems).getText().equals(cartItemCount));
-
     }
 
     public void selectCart() {

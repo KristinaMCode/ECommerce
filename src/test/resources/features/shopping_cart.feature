@@ -5,11 +5,11 @@ Feature: Shopping cart
 
   Background:
     Given I open the Saucedemo home page
-    Then User logs in
+    When User logs in
     Then User is logged in successfully
 
   @smoke
-  Scenario: Add a product to the shopping cart and verifywhats next
+  Scenario: Add a product to the shopping cart and verify cart contents
     When User adds the "Sauce Labs Backpack" to the shopping cart
     Then The shopping cart should contain 1 item
     And The shopping cart should contain "Sauce Labs Backpack" item
