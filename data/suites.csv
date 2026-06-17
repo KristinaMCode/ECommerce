@@ -1,16 +1,16 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Jun 16 07:16:05 UTC 2026","Tue Jun 16 07:16:06 UTC 2026","1333","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Tue Jun 16 07:15:58 UTC 2026","Tue Jun 16 07:16:05 UTC 2026","7032","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
-  I want to open the Sauce Demo website
-  So that I can access the products and make purchases"
-"passed","Tue Jun 16 07:16:06 UTC 2026","Tue Jun 16 07:16:08 UTC 2026","1174","","Shopping cart","","Add multiple products to the shopping cart and verify count","","Add multiple products to the shopping cart and verify count","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Tue Jun 16 07:16:08 UTC 2026","Tue Jun 16 07:16:09 UTC 2026","1199","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
-"passed","Tue Jun 16 07:15:47 UTC 2026","Tue Jun 16 07:15:58 UTC 2026","10542","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
+"passed","Wed Jun 17 07:00:45 UTC 2026","Wed Jun 17 07:01:05 UTC 2026","20002","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
+"passed","Wed Jun 17 07:01:13 UTC 2026","Wed Jun 17 07:01:14 UTC 2026","1320","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Wed Jun 17 07:01:15 UTC 2026","Wed Jun 17 07:01:16 UTC 2026","1206","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
+  I want to sort items on the Sauce Demo website
+  So that I can find products based on my preferences"
+"passed","Wed Jun 17 07:01:14 UTC 2026","Wed Jun 17 07:01:15 UTC 2026","1207","","Shopping cart","","Add multiple products to the shopping cart and verify count","","Add multiple products to the shopping cart and verify count","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Wed Jun 17 07:01:05 UTC 2026","Wed Jun 17 07:01:13 UTC 2026","7096","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+  I want to open the Sauce Demo website
+  So that I can access the products and make purchases"
