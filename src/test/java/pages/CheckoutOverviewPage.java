@@ -4,7 +4,10 @@ import config.TestConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CheckoutOverviewPage extends BasePage {
 
@@ -12,7 +15,7 @@ public class CheckoutOverviewPage extends BasePage {
     private By finishButton = By.id("finish");
     private By inventoryItem = By.className("inventory_item_name");
 
-     public CheckoutOverviewPage(WebDriver driver) {
+    public CheckoutOverviewPage(WebDriver driver) {
         super(driver);
     }
 
@@ -30,6 +33,15 @@ public class CheckoutOverviewPage extends BasePage {
     }
 
     public void completeCheckout() {
-         waitForVisible(finishButton).click();
+        waitForVisible(finishButton).click();
     }
+
+    public void verifyItemsInCart(List<String> expectedItems) {
+        verifyItemsPresent(expectedItems, getCartItemNames());
+    }
+
+    public List<String> getCartItemNames() {
+        return getElementTexts(inventoryItem);
+    }
+
 }

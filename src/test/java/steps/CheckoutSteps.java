@@ -12,6 +12,8 @@ import pages.CheckoutOverviewPage;
 import pages.CheckoutPage;
 import pages.InventoryPage;
 
+import java.util.List;
+
 public class CheckoutSteps {
 
     private static final Logger log = LoggerFactory.getLogger(CheckoutSteps.class);
@@ -64,5 +66,11 @@ public class CheckoutSteps {
     public void theCheckoutCompletePageShouldBeDisplayed() {
         checkoutCompletePage.verifyCheckoutCompletePage();
         log.info("theCheckoutCompletePageShouldBeDisplayed: Checkout complete page is displayed ");
+    }
+
+    @And ("The checkout overview page should contain the following items:")
+    public void verifyCheckoutPageContainsItems(List<String> expectedItems) {
+  checkoutOverviewPage.verifyItemsInCart(expectedItems);
+        log.info("verifyCheckoutOverviewContainsItems: Items verified in on Checkout Overview Page: " + expectedItems);
     }
 }

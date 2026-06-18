@@ -20,3 +20,22 @@ Feature: Checkout flow
     And The checkout overview page should contain "Sauce Labs Backpack" item
     When User completes the checkout process
     Then The checkout complete page should be displayed
+
+  @regression
+  Scenario: Add multiple items, verify checkout overview list contains all items
+    When User adds the "Sauce Labs Backpack" to the shopping cart
+    When User adds the "Sauce Labs Bike Light" to the shopping cart
+    When User adds the "Sauce Labs Bolt T-Shirt" to the shopping cart
+    Then The shopping cart should contain 3 items
+    And The shopping cart should contain the following items:
+      | Sauce Labs Backpack     |
+      | Sauce Labs Bike Light   |
+      | Sauce Labs Bolt T-Shirt |
+    When User proceeds to checkout
+    Then The checkout page should be displayed
+    When User enters checkout information with first name "John", last name "Doe", and postal code "12345"
+    Then The checkout overview page should be displayed
+    And The checkout overview page should contain the following items:
+      | Sauce Labs Backpack     |
+      | Sauce Labs Bike Light   |
+      | Sauce Labs Bolt T-Shirt |

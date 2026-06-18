@@ -31,10 +31,9 @@ public class CartPage extends BasePage {
     }
 
 
-
     public void isCartEmpty() {
         assertTrue("Cart badge should not be visible", isElementAbsent(cartItems));
-     //   assertTrue("Cart item should not be visible", isElementAbsent(inventoryItemName));
+        //   assertTrue("Cart item should not be visible", isElementAbsent(inventoryItemName));
     }
 
     public void clickCheckoutButton() {
@@ -42,24 +41,15 @@ public class CartPage extends BasePage {
     }
 
     public void verifyItemsInCart(List<String> expectedItems) {
-        List<String> actualItemNames = getCartItemNames();
-        for (String expectedItem : expectedItems) {
-            assertTrue(expectedItem + " should be present in the cart, but cart contains " + actualItemNames, actualItemNames.contains(expectedItem));
-        }
+        verifyItemsPresent(expectedItems, getCartItemNames());
     }
 
     public List<String> getCartItemNames() {
-        waitForVisible(inventoryItemName);
-        List<WebElement> items = driver.findElements(inventoryItemName);
-        List<String> actualItemNames = new ArrayList<>();
-        for (WebElement item : items) {
-            actualItemNames.add(item.getText());
-        }
-        return actualItemNames;
+        return getElementTexts(inventoryItemName);
     }
 
-    public void verifyItemNotInCart(String itemName){
+    public void verifyItemNotInCart(String itemName) {
         List<String> actualItemNames = getCartItemNames();
-            assertFalse(itemName + " should not be present in the cart" + actualItemNames, actualItemNames.contains(itemName));
+        assertFalse(itemName + " should not be present in the cart" + actualItemNames, actualItemNames.contains(itemName));
     }
 }
