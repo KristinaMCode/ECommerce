@@ -1,10 +1,10 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Jun 18 15:51:14 UTC 2026","Thu Jun 18 15:51:16 UTC 2026","1622","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
-  I want to open the Sauce Demo website
-  So that I can access the products and make purchases"
-"passed","Thu Jun 18 15:50:59 UTC 2026","Thu Jun 18 15:51:14 UTC 2026","15098","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
-  I want to open the Sauce Demo website
-  So that I can access the products and make purchases"
-"passed","Thu Jun 18 15:51:16 UTC 2026","Thu Jun 18 15:51:17 UTC 2026","1092","","Shopping cart","","Add a product to the shopping cart and verify cart contents","","Add a product to the shopping cart and verify cart contents","  As a user
+"passed","Thu Jun 18 19:01:26 UTC 2026","Thu Jun 18 19:01:27 UTC 2026","1149","","Shopping cart","","Add a product to the shopping cart and verify cart contents","","Add a product to the shopping cart and verify cart contents","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
+"passed","Thu Jun 18 19:01:24 UTC 2026","Thu Jun 18 19:01:26 UTC 2026","1054","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
+  I want to open the Sauce Demo website
+  So that I can access the products and make purchases"
+"passed","Thu Jun 18 19:01:17 UTC 2026","Thu Jun 18 19:01:24 UTC 2026","6974","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
+  I want to open the Sauce Demo website
+  So that I can access the products and make purchases"
