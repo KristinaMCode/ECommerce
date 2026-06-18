@@ -53,5 +53,11 @@ public class InventorySteps {
     public void verifyFirstProduct(String expectedProduct) {
         inventoryPage.verifyFirstProduct(expectedProduct);
     }
+
+    @When("User removes item {string} from the shopping cart")
+    public void removeItemFromCart(String itemName) {
+        inventoryPage.clickRemoveButton(itemName);
+        log.info("removeItemFromCart: Item " + itemName + " removed from cart ");
+    }
 }
 

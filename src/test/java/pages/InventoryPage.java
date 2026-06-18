@@ -52,4 +52,10 @@ public class InventoryPage extends BasePage {
         assertEquals("Expected first product to be " + expectedProduct + " but found " + actualFirstProduct,
                 expectedProduct, actualFirstProduct);
     }
+
+    public void clickRemoveButton(String itemName) {
+        String removeItem = itemName.toLowerCase().replace(" ", "-");
+        By removeItemButton = By.cssSelector("button[data-test='remove-" + removeItem + "']");
+        waitForVisible(removeItemButton).click();
+    }
 }
