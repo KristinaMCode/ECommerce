@@ -74,17 +74,33 @@ Allure report published after every run:
   ```bash
   # Clone the repository
   git clone https://github.com/KristinaMCode/ECommerce.git
-  cd ECommerce                                                                                                                                                                                                                     
-   
-  # Run all tests                                                                                                                                                                                                                  
-  mvn test        
+  cd ECommerce
+
+  # Run all tests
+  mvn test
 
   # Run only smoke tests
   mvn test -Dcucumber.filter.tags="@smoke"
-                                                                                                                                                                                                                                   
-  # Run only regression tests
-  mvn test -Dcucumber.filter.tags="@regression"                                                                                                                                                                                    
-                  
-  CI/CD
 
-  Tests run automatically on every push and pull request via GitHub Actions on a clean Ubuntu environment with headless Chrome. Allure report is published to GitHub Pages after every run.
+  # Run only regression tests
+  mvn test -Dcucumber.filter.tags="@regression"
+  ```
+
+## Running with Docker
+
+**Prerequisites:** Docker Desktop (no need to install Java, Maven, or Chrome locally — they're bundled into the image)
+
+  ```bash
+  # Build the image
+  docker build -t ecommerce-tests .
+
+  # Run smoke tests (default)
+  docker run --rm ecommerce-tests
+
+  # Run regression tests instead
+  docker run --rm ecommerce-tests mvn test -B -Dcucumber.filter.tags="@regression"
+  ```
+
+## CI/CD
+
+Tests run automatically on every push and pull request via GitHub Actions on a clean Ubuntu environment with headless Chrome. Allure report is published to GitHub Pages after every run.
