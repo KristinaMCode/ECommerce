@@ -1,12 +1,16 @@
 package steps;
 
 import config.TestContext;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.CartPage;
+import pages.InventoryPage;
+
+import java.util.List;
 
 public class CartSteps {
 
@@ -14,17 +18,14 @@ public class CartSteps {
 
     private final WebDriver driver;
     private final CartPage cartPage;
+    private InventoryPage inventoryPage;
 
     public CartSteps(TestContext ctx) {
         this.driver = ctx.getDriver();
         this.cartPage = new CartPage(driver);
+        this.inventoryPage = new InventoryPage(driver);
     }
 
-    @When("User removes {string} from the shopping cart")
-    public void removeItemFromCart(String itemName) {
-        cartPage.clickRemoveButton();
-        log.info("removeItemFromCart: Item " + itemName + " removed from cart ");
-    }
 
 
     @Then("The shopping cart should be empty")
@@ -37,4 +38,18 @@ public class CartSteps {
         cartPage.clickCheckoutButton();
         log.info("proceedToCheckout: User proceeded to checkout ");
     }
+
+    @And("The shopping cart should contain the following items:")
+    public void verifyCartContainsItems(List<String> expectedItems) {
+        inventoryPage.selectCart();
+        cartPage.verifyItemsInCart(expectedItems);
+        log.info("verifyCartContainsItems: Items verified in cart: " + expectedItems);
+    }
+
+    @And("The shopping cart should not contain {string} item")
+    public void verifyItemIsNotInCart(String itemName) {
+        cartPage.verifyItemNotInCart(itemName);
+        log.info("verifyCartDoesNotContainItem: Item verified not in cart: " + itemName);
+    }
+
 }
