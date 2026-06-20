@@ -1,25 +1,10 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat Jun 20 06:12:27 UTC 2026","Sat Jun 20 06:12:40 UTC 2026","12565","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
-  I want to add products to the shopping cart, remove them and verify the cart contents
-  So that I can manage my shopping cart effectively"
-"passed","Sat Jun 20 06:12:51 UTC 2026","Sat Jun 20 06:12:53 UTC 2026","1469","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sat Jun 20 06:12:53 UTC 2026","Sat Jun 20 06:12:54 UTC 2026","1386","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sat Jun 20 06:12:47 UTC 2026","Sat Jun 20 06:12:48 UTC 2026","1322","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sat Jun 20 06:12:48 UTC 2026","Sat Jun 20 06:12:50 UTC 2026","1432","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sat Jun 20 06:12:50 UTC 2026","Sat Jun 20 06:12:51 UTC 2026","1526","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sat Jun 20 06:12:40 UTC 2026","Sat Jun 20 06:12:47 UTC 2026","7059","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+"passed","Sat Jun 20 19:10:40 UTC 2026","Sat Jun 20 19:11:11 UTC 2026","30894","","Open Sauce Demo","","Open  page and verify URL and title","","Open  page and verify URL and title","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Sat Jun 20 06:12:54 UTC 2026","Sat Jun 20 06:12:55 UTC 2026","1158","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
+"passed","Sat Jun 20 19:11:11 UTC 2026","Sat Jun 20 19:11:13 UTC 2026","2153","","Open Sauce Demo","","Login to Sauce Demo","","Login to Sauce Demo","  As a user
+  I want to open the Sauce Demo website
+  So that I can access the products and make purchases"
+"passed","Sat Jun 20 19:11:13 UTC 2026","Sat Jun 20 19:11:14 UTC 2026","1124","","Shopping cart","","Add a product to the shopping cart and verify cart contents","","Add a product to the shopping cart and verify cart contents","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
