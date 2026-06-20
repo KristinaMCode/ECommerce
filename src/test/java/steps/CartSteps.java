@@ -57,7 +57,7 @@ public class CartSteps {
     public void calculateTotalPriceOfItems() {
         double cartTotal = cartPage.calculateTotalPriceOfItems();
         ctx.setCartTotal(cartTotal);
-        double taxesTotal = cartPage.calculateTaxes(cartTotal);
+        double taxesTotal = cartPage.calculateTotalWithTax(cartTotal);
         ctx.setTaxesTotalPrice(taxesTotal);
         log.info("calculateTotalPriceOfItems: cart total = " + cartTotal + ", with tax = " + taxesTotal);
 

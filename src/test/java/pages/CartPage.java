@@ -54,11 +54,9 @@ public class CartPage extends BasePage {
 
     public double calculateTotalPriceOfItems() {
         List<String> itemsPrices = getCartItemPrices();
-        System.out.println(itemsPrices);
         double priceOfItem = 0;
         for (String price : itemsPrices) {
             priceOfItem += Double.parseDouble(price.substring(1));
-            System.out.println(priceOfItem);
         }
         return priceOfItem;
     }
@@ -67,7 +65,7 @@ public class CartPage extends BasePage {
         return getElementTexts(itemPrice);
     }
 
-    public Double calculateTaxes(double cartTotal) {
-        return (cartTotal * 8 / 100) + cartTotal;
+    public Double calculateTotalWithTax(double cartTotal) {
+        return (cartTotal * 0.08) + cartTotal;
     }
 }
