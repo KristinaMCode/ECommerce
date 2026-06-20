@@ -19,13 +19,14 @@ public class CartSteps {
     private final WebDriver driver;
     private final CartPage cartPage;
     private InventoryPage inventoryPage;
+    private final TestContext ctx;
 
     public CartSteps(TestContext ctx) {
+        this.ctx = ctx;
         this.driver = ctx.getDriver();
         this.cartPage = new CartPage(driver);
         this.inventoryPage = new InventoryPage(driver);
     }
-
 
 
     @Then("The shopping cart should be empty")
@@ -50,6 +51,16 @@ public class CartSteps {
     public void verifyItemIsNotInCart(String itemName) {
         cartPage.verifyItemNotInCart(itemName);
         log.info("verifyCartDoesNotContainItem: Item verified not in cart: " + itemName);
+    }
+
+    @And("And User calculates the total price of items in the cart")
+    public void calculateTotalPriceOfItems() {
+        double cartTotal = cartPage.calculateTotalPriceOfItems();
+        ctx.setCartTotal(cartTotal);
+        double taxesTotal = cartPage.calculateTotalWithTax(cartTotal);
+        ctx.setTaxesTotalPrice(taxesTotal);
+        log.info("calculateTotalPriceOfItems: cart total = " + cartTotal + ", with tax = " + taxesTotal);
+
     }
 
 }

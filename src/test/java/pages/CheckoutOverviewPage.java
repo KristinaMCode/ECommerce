@@ -4,15 +4,19 @@ import config.TestConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CheckoutOverviewPage extends BasePage {
 
     private By overviewTitle = By.xpath("//span[text()='Checkout: Overview']");
     private By finishButton = By.id("finish");
     private By inventoryItem = By.className("inventory_item_name");
+    private By summarytotal = By.className("summary_total_label");
 
-     public CheckoutOverviewPage(WebDriver driver) {
+    public CheckoutOverviewPage(WebDriver driver) {
         super(driver);
     }
 
@@ -30,6 +34,21 @@ public class CheckoutOverviewPage extends BasePage {
     }
 
     public void completeCheckout() {
-         waitForVisible(finishButton).click();
+        waitForVisible(finishButton).click();
     }
+
+    public void verifyItemsInCart(List<String> expectedItems) {
+        verifyItemsPresent(expectedItems, getCartItemNames());
+    }
+
+    public List<String> getCartItemNames() {
+        return getElementTexts(inventoryItem);
+    }
+
+    public void verifyCheckoutTotalMatchPriceTotal(double expectedTotal) {
+        String summaryTotal = driver.findElement(summarytotal).getText();
+        double actualTotal = Double.parseDouble(summaryTotal.replaceAll("[^\\d.]", ""));
+        assertEquals("Checkout total should match calculated cart total", expectedTotal, actualTotal, 0.01);
+    }
+
 }
