@@ -1,11 +1,9 @@
 package pages;
 
-import config.TestConfig;
+import config.TestContext;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -16,6 +14,7 @@ public class CartPage extends BasePage {
     private By inventoryItemName = By.className("inventory_item_name");
     private By cartItems = By.className("shopping_cart_badge");
     private By checkoutButton = By.id("checkout");
+    private By itemPrice = By.className("inventory_item_price");
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -51,5 +50,24 @@ public class CartPage extends BasePage {
     public void verifyItemNotInCart(String itemName) {
         List<String> actualItemNames = getCartItemNames();
         assertFalse(itemName + " should not be present in the cart" + actualItemNames, actualItemNames.contains(itemName));
+    }
+
+    public double calculateTotalPriceOfItems() {
+        List<String> itemsPrices = getCartItemPrices();
+        System.out.println(itemsPrices);
+        double priceOfItem = 0;
+        for (String price : itemsPrices) {
+            priceOfItem += Double.parseDouble(price.substring(1));
+            System.out.println(priceOfItem);
+        }
+        return priceOfItem;
+    }
+
+    public List<String> getCartItemPrices() {
+        return getElementTexts(itemPrice);
+    }
+
+    public Double calculateTaxes(double cartTotal) {
+        return (cartTotal * 8 / 100) + cartTotal;
     }
 }

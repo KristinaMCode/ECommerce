@@ -23,8 +23,10 @@ public class CheckoutSteps {
     private final CheckoutPage checkoutPage;
     private final CheckoutOverviewPage checkoutOverviewPage;
     private final CheckoutCompletePage checkoutCompletePage;
+    private final TestContext ctx;
 
     public CheckoutSteps(TestContext ctx) {
+        this.ctx = ctx;
         this.driver = ctx.getDriver();
         this.checkoutPage = new CheckoutPage(driver);
         this.checkoutOverviewPage = new CheckoutOverviewPage(driver);
@@ -68,9 +70,14 @@ public class CheckoutSteps {
         log.info("theCheckoutCompletePageShouldBeDisplayed: Checkout complete page is displayed ");
     }
 
-    @And ("The checkout overview page should contain the following items:")
+    @And("The checkout overview page should contain the following items:")
     public void verifyCheckoutPageContainsItems(List<String> expectedItems) {
-  checkoutOverviewPage.verifyItemsInCart(expectedItems);
+        checkoutOverviewPage.verifyItemsInCart(expectedItems);
         log.info("verifyCheckoutOverviewContainsItems: Items verified in on Checkout Overview Page: " + expectedItems);
+    }
+
+    @Then("The checkout total should match the cart price total")
+    public void verifyCheckoutTotalMatchPriceTotal() {
+        checkoutOverviewPage.verifyCheckoutTotalMatchPriceTotal(ctx.getTaxesTotalPrice());
     }
 }

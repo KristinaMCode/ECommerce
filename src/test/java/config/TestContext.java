@@ -15,7 +15,6 @@ public class TestContext {
         return driver;
     }
 
-
     public TestContext() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -37,4 +36,26 @@ public class TestContext {
         options.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(options);
     }
+
+    private double cartTotal;
+
+    public double getCartTotal() {
+        return cartTotal;
+    }
+
+    public void setCartTotal(double cartTotal) {
+        this.cartTotal = cartTotal;
+    }
+
+    private double taxesTotalPrice;
+
+    public double getTaxesTotalPrice() {
+        return taxesTotalPrice;
+    }
+
+    public void setTaxesTotalPrice(double taxesTotalPrice) {
+        this.taxesTotalPrice = taxesTotalPrice;
+    }
+
+
 }
