@@ -1,31 +1,31 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Aug 17 02:53:20 UTC 2026","Mon Aug 17 02:53:22 UTC 2026","1409","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
+"passed","Tue Aug 18 02:48:33 UTC 2026","Tue Aug 18 02:48:34 UTC 2026","1348","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Mon Aug 17 02:53:18 UTC 2026","Mon Aug 17 02:53:19 UTC 2026","1434","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
+"passed","Tue Aug 18 02:48:39 UTC 2026","Tue Aug 18 02:48:40 UTC 2026","1463","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Mon Aug 17 02:53:16 UTC 2026","Mon Aug 17 02:53:18 UTC 2026","1370","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Mon Aug 17 02:53:19 UTC 2026","Mon Aug 17 02:53:20 UTC 2026","1364","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Mon Aug 17 02:53:08 UTC 2026","Mon Aug 17 02:53:15 UTC 2026","6921","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+"passed","Tue Aug 18 02:48:23 UTC 2026","Tue Aug 18 02:48:25 UTC 2026","1785","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
+  I want to add products to the shopping cart, remove them and verify the cart contents
+  So that I can manage my shopping cart effectively"
+"passed","Tue Aug 18 02:48:26 UTC 2026","Tue Aug 18 02:48:33 UTC 2026","6852","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Mon Aug 17 02:53:06 UTC 2026","Mon Aug 17 02:53:08 UTC 2026","1716","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
+"passed","Tue Aug 18 02:48:10 UTC 2026","Tue Aug 18 02:48:23 UTC 2026","12692","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
-"passed","Mon Aug 17 02:52:51 UTC 2026","Mon Aug 17 02:53:04 UTC 2026","12969","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
+"passed","Tue Aug 18 02:48:25 UTC 2026","Tue Aug 18 02:48:26 UTC 2026","1601","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
-"passed","Mon Aug 17 02:53:22 UTC 2026","Mon Aug 17 02:53:23 UTC 2026","1241","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
-"passed","Mon Aug 17 02:53:15 UTC 2026","Mon Aug 17 02:53:16 UTC 2026","1360","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
+"passed","Tue Aug 18 02:48:38 UTC 2026","Tue Aug 18 02:48:39 UTC 2026","1475","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Mon Aug 17 02:53:04 UTC 2026","Mon Aug 17 02:53:06 UTC 2026","1881","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
-  I want to add products to the shopping cart, remove them and verify the cart contents
-  So that I can manage my shopping cart effectively"
+"passed","Tue Aug 18 02:48:34 UTC 2026","Tue Aug 18 02:48:36 UTC 2026","1506","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Tue Aug 18 02:48:41 UTC 2026","Tue Aug 18 02:48:42 UTC 2026","1307","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
+  I want to sort items on the Sauce Demo website
+  So that I can find products based on my preferences"
+"passed","Tue Aug 18 02:48:36 UTC 2026","Tue Aug 18 02:48:38 UTC 2026","1554","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
