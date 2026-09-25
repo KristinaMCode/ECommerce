@@ -1,31 +1,31 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Sep 24 06:57:52 UTC 2026","Thu Sep 24 06:57:54 UTC 2026","1541","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Thu Sep 24 06:57:56 UTC 2026","Thu Sep 24 06:57:57 UTC 2026","1039","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Thu Sep 24 06:57:44 UTC 2026","Thu Sep 24 06:57:46 UTC 2026","1351","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
+"passed","Fri Sep 25 06:52:03 UTC 2026","Fri Sep 25 06:52:04 UTC 2026","1585","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
-"passed","Thu Sep 24 06:57:55 UTC 2026","Thu Sep 24 06:57:56 UTC 2026","1134","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
+"passed","Fri Sep 25 06:52:16 UTC 2026","Fri Sep 25 06:52:17 UTC 2026","1210","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Thu Sep 24 06:57:57 UTC 2026","Thu Sep 24 06:57:58 UTC 2026","1052","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Thu Sep 24 06:57:58 UTC 2026","Thu Sep 24 06:57:59 UTC 2026","911","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
-"passed","Thu Sep 24 06:57:54 UTC 2026","Thu Sep 24 06:57:55 UTC 2026","1542","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Thu Sep 24 06:57:43 UTC 2026","Thu Sep 24 06:57:44 UTC 2026","1431","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
+"passed","Fri Sep 25 06:52:01 UTC 2026","Fri Sep 25 06:52:03 UTC 2026","1712","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
-"passed","Thu Sep 24 06:57:46 UTC 2026","Thu Sep 24 06:57:52 UTC 2026","6510","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+"passed","Fri Sep 25 06:52:04 UTC 2026","Fri Sep 25 06:52:11 UTC 2026","6849","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Thu Sep 24 06:57:31 UTC 2026","Thu Sep 24 06:57:43 UTC 2026","11616","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
+"passed","Fri Sep 25 06:52:12 UTC 2026","Fri Sep 25 06:52:14 UTC 2026","1223","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Fri Sep 25 06:51:55 UTC 2026","Fri Sep 25 06:52:01 UTC 2026","5907","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
+"passed","Fri Sep 25 06:52:11 UTC 2026","Fri Sep 25 06:52:12 UTC 2026","1134","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Fri Sep 25 06:52:15 UTC 2026","Fri Sep 25 06:52:16 UTC 2026","1220","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Fri Sep 25 06:52:14 UTC 2026","Fri Sep 25 06:52:15 UTC 2026","1277","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Fri Sep 25 06:52:17 UTC 2026","Fri Sep 25 06:52:18 UTC 2026","1082","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
+  I want to sort items on the Sauce Demo website
+  So that I can find products based on my preferences"
