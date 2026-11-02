@@ -1,31 +1,31 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Nov 01 08:26:08 UTC 2026","Sun Nov 01 08:26:11 UTC 2026","2606","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
-  I want to add products to the shopping cart, remove them and verify the cart contents
-  So that I can manage my shopping cart effectively"
-"passed","Sun Nov 01 08:26:22 UTC 2026","Sun Nov 01 08:26:24 UTC 2026","1634","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
+"passed","Mon Nov 02 08:38:43 UTC 2026","Mon Nov 02 08:38:44 UTC 2026","1222","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Sun Nov 01 08:26:11 UTC 2026","Sun Nov 01 08:26:12 UTC 2026","1666","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
-  I want to add products to the shopping cart, remove them and verify the cart contents
-  So that I can manage my shopping cart effectively"
-"passed","Sun Nov 01 08:26:12 UTC 2026","Sun Nov 01 08:26:19 UTC 2026","6857","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
+"passed","Mon Nov 02 08:38:46 UTC 2026","Mon Nov 02 08:38:47 UTC 2026","1234","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
+  I want to add products to the shopping cart
+  So that I can review my selections before checkout"
+"passed","Mon Nov 02 08:38:35 UTC 2026","Mon Nov 02 08:38:42 UTC 2026","6710","","Open Sauce Demo","","Login with invalid credentials from CSV","","Login with invalid credentials from CSV","  As a user
   I want to open the Sauce Demo website
   So that I can access the products and make purchases"
-"passed","Sun Nov 01 08:26:19 UTC 2026","Sun Nov 01 08:26:21 UTC 2026","1389","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
+"passed","Mon Nov 02 08:38:47 UTC 2026","Mon Nov 02 08:38:48 UTC 2026","1234","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Sun Nov 01 08:26:27 UTC 2026","Sun Nov 01 08:26:28 UTC 2026","1315","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
-  I want to sort items on the Sauce Demo website
-  So that I can find products based on my preferences"
-"passed","Sun Nov 01 08:26:21 UTC 2026","Sun Nov 01 08:26:22 UTC 2026","1479","","Shopping cart","","Add multiple items, verify all are present","","Add multiple items, verify all are present","  As a user
-  I want to add products to the shopping cart
-  So that I can review my selections before checkout"
-"passed","Sun Nov 01 08:26:03 UTC 2026","Sun Nov 01 08:26:08 UTC 2026","4517","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
+"passed","Mon Nov 02 08:38:31 UTC 2026","Mon Nov 02 08:38:34 UTC 2026","2190","","Checkout flow","","Add multiple items, verify checkout overview list contains all items","","Add multiple items, verify checkout overview list contains all items","  As a user
   I want to add products to the shopping cart, remove them and verify the cart contents
   So that I can manage my shopping cart effectively"
-"passed","Sun Nov 01 08:26:24 UTC 2026","Sun Nov 01 08:26:25 UTC 2026","1489","","Shopping cart","","Remove all items one by one","","Remove all items one by one","  As a user
+"passed","Mon Nov 02 08:38:48 UTC 2026","Mon Nov 02 08:38:49 UTC 2026","1059","","Sorting Items","","Sort products by name Z to A","","Sort products by name Z to A","  As a user
+  I want to sort items on the Sauce Demo website
+  So that I can find products based on my preferences"
+"passed","Mon Nov 02 08:38:19 UTC 2026","Mon Nov 02 08:38:31 UTC 2026","12496","","Checkout flow","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","","Add a product to the shopping cart, proceed to checkout and verify the checkout process","  As a user
+  I want to add products to the shopping cart, remove them and verify the cart contents
+  So that I can manage my shopping cart effectively"
+"passed","Mon Nov 02 08:38:44 UTC 2026","Mon Nov 02 08:38:46 UTC 2026","1283","","Shopping cart","","Remove one item out of several","","Remove one item out of several","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
-"passed","Sun Nov 01 08:26:25 UTC 2026","Sun Nov 01 08:26:27 UTC 2026","1462","","Shopping cart","","Remove then re-add same item, no duplicate","","Remove then re-add same item, no duplicate","  As a user
+"passed","Mon Nov 02 08:38:34 UTC 2026","Mon Nov 02 08:38:35 UTC 2026","1591","","Checkout flow","","Add multiple items, and verify price is correctly calculated","","Add multiple items, and verify price is correctly calculated","  As a user
+  I want to add products to the shopping cart, remove them and verify the cart contents
+  So that I can manage my shopping cart effectively"
+"passed","Mon Nov 02 08:38:42 UTC 2026","Mon Nov 02 08:38:43 UTC 2026","1248","","Shopping cart","","Add a product to the shopping cart, remove it and verify","","Add a product to the shopping cart, remove it and verify","  As a user
   I want to add products to the shopping cart
   So that I can review my selections before checkout"
